@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN Up Page</title>
+</head>
+<body>
+
+    <form action="">
+        <fieldset>
+        <legend>SIGN UP</legend>
+
+        <input type="text" name="username" placeholder="Enter the Name">
+        <br><br>
+
+        <input type="password" name="password" placeholder="Enter the password">
+        <br>
+        <br>
+        <button type="submit">SIGN UP</button>
+    </fieldset>
+    </form>
+
+    <script>
+
+        let form=document.querySelector("form");
+
+        form.addEventListener("submit", ((event)=>{
+
+            event.preventDefault();
+
+            let username=document.getElementsByName("username")[0].value;
+            let password=document.getElementsByName("password")[0].value;
+
+            console.log(username);
+            console.log(password);
+
+
+            if(username=="" && password==""){
+                alert("enter the username and password");
+            }
+            else if(username==""){
+                alert("enter the username");
+            }
+            else if(password==""){
+                alert("enter the password");
+            }
+            else{
+                localStorage.setItem("username",username);
+                localStorage.setItem("password",password);
+                
+                alert("SIGN UP successful");
+                open("./LOGIN.HTML");
+            }
+        }
+        ));
+
+    </script>
+    
+</body>
+</html>

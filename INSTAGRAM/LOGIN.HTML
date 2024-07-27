@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+</head>
+<body>
+
+    <form action="">
+        <fieldset>
+        <legend>LOGIN</legend>
+
+        <input type="text" name="eusername" placeholder="Enter the Name">
+        <br><br>
+
+        <input type="password" name="epassword" placeholder="Enter the password">
+        <br>
+        <br>
+        <button type="submit">LOGIN </button>
+    </fieldset>
+    </form>
+
+
+    <script>
+
+    let form=document.querySelector("form");
+
+    form.addEventListener("submit", ((event)=>{
+    
+        event.preventDefault();
+    
+        let eusername=document.getElementsByName("eusername")[0].value;
+        let epassword=document.getElementsByName("epassword")[0].value;
+
+        console.log(eusername);
+        console.log(epassword);
+
+        let username=localStorage.getItem("username");
+        let password=localStorage.getItem("password");
+
+        if(username==eusername && password==epassword){
+            alert("welcome to homepage");
+            open("./HOMEPAGE.HTML");
+
+        }
+        else{
+            alert("invalid username or password");
+        }
+
+    }
+    ));
+
+
+
+
+    </script>
+
+
+
+
+
+
+    
+</body>
+</html>
